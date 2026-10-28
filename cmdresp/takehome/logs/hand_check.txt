@@ -1,0 +1,5 @@
+PASS  taps [1,2,3], x=[1,0,0,0,1,1] -> [1,2,3,0,1,3]: got [1.0, 2.0, 3.0, 0.0, 1.0, 3.0]
+PASS  then x=[2] -> [7] (history carried): got [7.0]
+PASS  CONFIG [0.5], x=[4] -> [2] (history cleared): got [2.0]
+PASS  taps [1,1,1], x=[1,1e8,-1e8] -> [1,1e8,1]: got [1.0, 100000000.0, 1.0]
+note  the same sum oldest-first gives 0.0: the order matters
