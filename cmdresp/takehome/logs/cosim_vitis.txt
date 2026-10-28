@@ -1,0 +1,884 @@
+
+****** vitis-run v2026.1 (64-bit)
+  **** SW Build 6497934 on 2026-06-16-10:22:25
+  **** Start of session at: Tue Oct 27 22:12:47 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+  **** HLS Build v2026.1 6493734
+Sourcing Tcl script '/home/ff2364/hwdesign-work/cmdresp/takehome/run_cosim.tcl'
+INFO: [HLS 200-1510] Running: open_project -reset prj_fir_cosim 
+WARNING: [HLS 200-2182] The 'prj_fir_cosim' project will not automatically appear within Vitis IDE workspaces and is meant only for TCL batch use.  Please use open_component instead of open_project/open_solution to generate Vitis IDE compatible component files and directory structure.
+Resolution: For help on HLS 200-2182 see docs.amd.com/access/sources/dita/topic?Doc_Version=2026.1%20English&url=ug1448-hls-guidance&resourceid=200-2182.html
+INFO: [HLS 200-10] Opening and resetting solution '/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim'.
+INFO: [HLS 200-1510] Running: set_top fir 
+INFO: [HLS 200-1510] Running: add_files /home/ff2364/hwdesign-work/cmdresp/takehome/kernel.cpp 
+INFO: [HLS 200-10] Adding design file '/home/ff2364/hwdesign-work/cmdresp/takehome/kernel.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb /home/ff2364/hwdesign-work/cmdresp/takehome/tb.cpp 
+INFO: [HLS 200-10] Adding test bench file '/home/ff2364/hwdesign-work/cmdresp/takehome/tb.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution -reset solution1 
+INFO: [HLS 200-10] Creating and opening solution '/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [HLS 200-1510] Running: set_part xc7z020clg484-1 
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1510] Running: create_clock -period 10 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 1.15 seconds. CPU system time: 0.16 seconds. Elapsed time: 1.52 seconds; current allocated memory: 286.438 MB.
+INFO: [HLS 200-2191] C-Synthesis will use clang-16 as the compiler
+INFO: [HLS 200-10] Analyzing design file 'kernel.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 7.84 seconds. CPU system time: 1.22 seconds. Elapsed time: 10.63 seconds; current allocated memory: 289.531 MB.
+INFO: [HLS 200-1995] There were 2,977 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details (/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-131] Inlining function '(anonymous namespace)::put(hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>, bool)' into 'fir(hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<1>&, ap_uint<8>&, ap_uint<16>&)' (kernel.cpp:132:21)
+INFO: [HLS 214-131] Inlining function '(anonymous namespace)::as_bits(float)' into 'fir(hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<1>&, ap_uint<8>&, ap_uint<16>&)' (kernel.cpp:127:37)
+INFO: [HLS 214-131] Inlining function '(anonymous namespace)::as_float(ap_uint<32>)' into 'fir(hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<1>&, ap_uint<8>&, ap_uint<16>&)' (kernel.cpp:115:31)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_111_2' is marked as complete unroll implied by the pipeline pragma (kernel.cpp:111:39)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_119_3' is marked as complete unroll implied by the pipeline pragma (kernel.cpp:119:39)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_111_2' (kernel.cpp:111:39) in function 'fir' completely with a factor of 15 (kernel.cpp:40:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_119_3' (kernel.cpp:119:39) in function 'fir' completely with a factor of 15 (kernel.cpp:40:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_94_1' (kernel.cpp:94:38) in function 'fir' completely with a factor of 16 (kernel.cpp:40:0)
+INFO: [HLS 200-1995] There were 829 instructions in the design after the 'Unroll/Inline' phase of compilation. See the Design Size Report for more details (/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 648 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details (/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 627 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details (/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 523 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details (/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-248] Applying array_partition to 'h': Complete partitioning on dimension 1. (kernel.cpp:54:11)
+INFO: [HLS 200-1995] There were 461 instructions in the design after the 'Array/Struct' phase of compilation. See the Design Size Report for more details (/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 508 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details (/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 508 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details (/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 508 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details (/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 701 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details (/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 695 instructions in the design after the 'Performance' phase of compilation. See the Design Size Report for more details (/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 619 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details (/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 529 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details (/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 529 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details (/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 483 instructions in the design after the 'HW Transforms' phase of compilation. See the Design Size Report for more details (/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 419 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details (/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.47 seconds. CPU system time: 0.8 seconds. Elapsed time: 9.78 seconds; current allocated memory: 299.410 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 299.410 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.04 seconds; current allocated memory: 300.309 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 300.785 MB.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (kernel.cpp:109:1) to (kernel.cpp:133:33) in function 'fir'... converting 3 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.1 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 323.754 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.13 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.14 seconds; current allocated memory: 334.996 MB.
+INFO: [HLS 200-2255] Checking Wire Delay Status: Wire Delay Mode is ON
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'fir' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fir_Pipeline_samp_loop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'samp_loop'.
+WARNING: [HLS 200-887] Cannot meet target clock period from basic block VITIS_LOOP_111_2 to axis read operation ('empty_106', kernel.cpp:110) on port 's_in_V_data_V' (kernel.cpp:110) (combination delay: 10.921 ns) to honor II or Latency constraint in region 'samp_loop'.
+Resolution: For help on HLS 200-887 see docs.amd.com/access/sources/dita/topic?Doc_Version=2026.1%20English&url=ug1448-hls-guidance&resourceid=200-887.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 81, loop 'samp_loop'
+WARNING: [HLS 200-871] Estimated clock period (7.954 ns) exceeds the target (target clock period: 10.000 ns, clock uncertainty: 2.700 ns, effective delay budget: 7.300 ns).
+Resolution: For help on HLS 200-871 see docs.amd.com/access/sources/dita/topic?Doc_Version=2026.1%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'fir_Pipeline_samp_loop' consists of the following:
+	'select' operation 32 bit ('acc', kernel.cpp:123) [190]  (0.698 ns)
+	'fadd' operation 32 bit ('s', kernel.cpp:122) [192]  (7.256 ns)
+
+Resolution: For help on HLS 200-1016 see docs.amd.com/access/sources/dita/topic?Doc_Version=2026.1%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.15 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.21 seconds; current allocated memory: 335.684 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.06 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.12 seconds; current allocated memory: 335.996 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fir_Pipeline_tap_loop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'tap_loop'.
+WARNING: [HLS 200-887] Cannot meet target clock period from basic block for.body to 'store' operation ('k_write_ln77', kernel.cpp:77) of variable 'add_ln77', kernel.cpp:77 5 bit on local variable 'k', kernel.cpp:77 (combination delay: 7.727 ns) to honor II or Latency constraint in region 'tap_loop'.
+Resolution: For help on HLS 200-887 see docs.amd.com/access/sources/dita/topic?Doc_Version=2026.1%20English&url=ug1448-hls-guidance&resourceid=200-887.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'tap_loop'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.14 seconds; current allocated memory: 338.031 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.06 seconds; current allocated memory: 338.031 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fir' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.11 seconds; current allocated memory: 338.523 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.06 seconds; current allocated memory: 338.523 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fir_Pipeline_samp_loop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'fir_Pipeline_samp_loop' pipeline 'samp_loop' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-104] Estimated max fanout for 'fir_Pipeline_samp_loop' is 9537 from HDL expression: (1'b0 == ap_block_pp0_stage0_11001)
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_5_full_dsp_1': 15 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 16 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fir_Pipeline_samp_loop'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.29 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.35 seconds; current allocated memory: 346.570 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fir_Pipeline_tap_loop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'fir_Pipeline_tap_loop' pipeline 'tap_loop' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fir_Pipeline_tap_loop'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.3 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.37 seconds; current allocated memory: 351.820 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fir' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir/s_in_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir/s_in_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir/s_in_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir/s_in_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir/m_out_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir/m_out_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir/m_out_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir/m_out_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir/halted' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir/error' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir/tx_id' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'fir' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'halted', 'error', 'tx_id' and 'return' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fir'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.17 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.26 seconds; current allocated memory: 355.656 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.56 seconds. CPU system time: 0.1 seconds. Elapsed time: 0.94 seconds; current allocated memory: 363.340 MB.
+INFO: [HLS 200-2225] Wrote inferred directives to file /home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/syn/inferred_directives.ini
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 1.01 seconds. CPU system time: 0.13 seconds. Elapsed time: 1.27 seconds; current allocated memory: 367.941 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for fir.
+INFO: [VLOG 209-307] Generating Verilog RTL for fir.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 125.72 MHz
+INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:26; Allocated memory: 81.504 MB.
+INFO: [HLS 200-1510] Running: cosim_design -argv /home/ff2364/hwdesign-work/cmdresp/takehome/data cosim 
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+   Build using "/eda/xilinx/2026.1/Vitis/lnx64/tools/clang-16/bin/clang++"
+   Compiling apatb_fir.cpp
+   Compiling apatb_fir_util.cpp
+   Compiling kernel.cpp_pre.cpp
+   Compiling tb.cpp_pre.cpp
+   Compiling apatb_fir_ir.ll
+   Generating cosim.tv.exe
+INFO: [COSIM 212-302] Starting C TB testing ... 
+scenario hand_a                   halted=0 error=0 tx_id=0 out_words=13 unread_words=0
+scenario hand_order               halted=0 error=0 tx_id=0 out_words=5 unread_words=0
+scenario ntaps1                   halted=0 error=0 tx_id=0 out_words=22 unread_words=0
+scenario ntaps16                  halted=0 error=0 tx_id=0 out_words=52 unread_words=0
+scenario short_cross              halted=0 error=0 tx_id=0 out_words=32 unread_words=0
+scenario split_one                halted=0 error=0 tx_id=0 out_words=42 unread_words=0
+scenario split_many               halted=0 error=0 tx_id=0 out_words=45 unread_words=0
+scenario reconfig                 halted=0 error=0 tx_id=0 out_words=30 unread_words=0
+scenario zero_len                 halted=0 error=0 tx_id=0 out_words=8 unread_words=0
+scenario signed_zero              halted=0 error=0 tx_id=0 out_words=5 unread_words=0
+scenario nonfinite_taps           halted=0 error=0 tx_id=0 out_words=5 unread_words=0
+scenario nan_sample               halted=0 error=0 tx_id=0 out_words=7 unread_words=0
+scenario timing_p0                halted=0 error=0 tx_id=0 out_words=2 unread_words=0
+scenario timing_p1                halted=0 error=0 tx_id=0 out_words=3 unread_words=0
+scenario timing_p256              halted=0 error=0 tx_id=0 out_words=258 unread_words=0
+scenario timing_p512              halted=0 error=0 tx_id=0 out_words=514 unread_words=0
+scenario err_unknown              halted=1 error=1 tx_id=52 out_words=5 unread_words=0
+scenario err_unknown_queued       halted=1 error=1 tx_id=52 out_words=5 unread_words=11
+scenario err_unknown_fresh        halted=0 error=0 tx_id=0 out_words=10 unread_words=0
+scenario err_bad_ntaps0           halted=1 error=2 tx_id=53 out_words=0 unread_words=0
+scenario err_bad_ntaps0_queued    halted=1 error=2 tx_id=53 out_words=0 unread_words=11
+scenario err_bad_ntaps0_fresh     halted=0 error=0 tx_id=0 out_words=10 unread_words=0
+scenario err_bad_ntaps17          halted=1 error=2 tx_id=54 out_words=0 unread_words=17
+scenario err_bad_ntaps17_queued   halted=1 error=2 tx_id=54 out_words=0 unread_words=28
+scenario err_bad_ntaps17_fresh    halted=0 error=0 tx_id=0 out_words=10 unread_words=0
+scenario err_no_config            halted=1 error=3 tx_id=55 out_words=0 unread_words=4
+scenario err_no_config_queued     halted=1 error=3 tx_id=55 out_words=0 unread_words=15
+scenario err_no_config_fresh      halted=0 error=0 tx_id=0 out_words=10 unread_words=0
+scenario err_no_config_zero       halted=1 error=3 tx_id=56 out_words=0 unread_words=0
+scenario err_no_config_zero_queued halted=1 error=3 tx_id=56 out_words=0 unread_words=11
+scenario err_no_config_zero_fresh halted=0 error=0 tx_id=0 out_words=10 unread_words=0
+scenario err_taps_early           halted=1 error=4 tx_id=57 out_words=0 unread_words=0
+scenario err_taps_early_queued    halted=1 error=4 tx_id=57 out_words=0 unread_words=11
+scenario err_taps_early_fresh     halted=0 error=0 tx_id=0 out_words=10 unread_words=0
+scenario err_taps_notlast         halted=1 error=5 tx_id=58 out_words=0 unread_words=0
+scenario err_taps_notlast_queued  halted=1 error=5 tx_id=58 out_words=0 unread_words=11
+scenario err_taps_notlast_fresh   halted=0 error=0 tx_id=0 out_words=10 unread_words=0
+scenario err_samp_early           halted=1 error=6 tx_id=61 out_words=14 unread_words=0
+scenario err_samp_early_queued    halted=1 error=6 tx_id=61 out_words=14 unread_words=11
+scenario err_samp_early_fresh     halted=0 error=0 tx_id=0 out_words=10 unread_words=0
+scenario err_samp_notlast         halted=1 error=7 tx_id=63 out_words=8 unread_words=0
+scenario err_samp_notlast_queued  halted=1 error=7 tx_id=63 out_words=8 unread_words=11
+scenario err_samp_notlast_fresh   halted=0 error=0 tx_id=0 out_words=10 unread_words=0
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 534
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+find not read role field
+find not read role field
+find not read role field
+INFO: [Common 17-3922] A valid Vivado Design Suite ENTERPRISE license has been detected. Your current license is active and will expire on 31-jul-2027.
+
+****** Vivado v2026.1 (64-bit)
+  **** SW Build 6511674 on Tue Jun 16 11:01:26 MDT 2026
+  **** IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+  **** SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+  **** Start of session at: Tue Oct 27 22:13:36 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source run_vivado_gen_ip.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/eda/xilinx/2026.1/data/ip'.
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'fir_fmul_32ns_32ns_32_4_max_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'fir_fmul_32ns_32ns_32_4_max_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'fir_fadd_32ns_32ns_32_5_full_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'fir_fadd_32ns_32ns_32_5_full_dsp_1_ip'...
+INFO: [Common 17-206] Exiting Vivado at Tue Oct 27 22:13:48 2026...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /eda/xilinx/2026.1/Vivado/bin/unwrapped/lnx64.o/xelab xil_defaultlib.apatb_fir_top xil_defaultlib.glbl -Oenable_linking_all_libraries -prj fir.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_1_22 -L floating_point_v7_0_27 --lib ieee_proposed=./ieee_proposed -L uvm -relax -i ./svr -i ./svtb -i ./file_agent -i ./fir_subsystem -s fir 
+Multi-threading is on. Using 62 slave threads.
+Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/sim/verilog/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/sim/verilog/AESL_deadlock_kernel_monitor_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_kernel_monitor_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/sim/verilog/AESL_deadlock_idx0_monitor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_idx0_monitor
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/sim/verilog/AESL_deadlock_idx1_monitor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_idx1_monitor
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/sim/verilog/fir_flow_control_loop_pipe_sequential_init.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_flow_control_loop_pipe_sequential_init
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/sim/verilog/fir_fir_Pipeline_samp_loop.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_fir_Pipeline_samp_loop
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/sim/verilog/fir_regslice_both.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_regslice_both
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/sim/verilog/fir_fmul_32ns_32ns_32_4_max_dsp_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_fmul_32ns_32ns_32_4_max_dsp_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/sim/verilog/fir_fir_Pipeline_tap_loop.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_fir_Pipeline_tap_loop
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/sim/verilog/fir.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_fir_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/sim/verilog/fir_control_s_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_control_s_axi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/sim/verilog/fir_fadd_32ns_32ns_32_5_full_dsp_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_fadd_32ns_32ns_32_5_full_dsp_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/sim/verilog/fir.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/sim/verilog/dataflow_monitor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dataflow_monitor
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/sim/verilog/file_agent/file_agent_pkg.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/sim/verilog/svr/svr_pkg.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/sim/verilog/svr/svr_if.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/sim/verilog/axivip/axi_pkg.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/sim/verilog/axivip/axi_if.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/sim/verilog/fir_subsystem/fir_subsystem_pkg.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/sim/verilog/svtb/misc_interface.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/sim/verilog/svtb/sv_module_top.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sv_module_top
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/sim/verilog/ip/xil_defaultlib/fir_fmul_32ns_32ns_32_4_max_dsp_1_ip.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'fir_fmul_32ns_32ns_32_4_max_dsp_1_ip'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir_cosim/solution1/sim/verilog/ip/xil_defaultlib/fir_fadd_32ns_32ns_32_5_full_dsp_1_ip.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'fir_fadd_32ns_32ns_32_5_full_dsp_1_ip'
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package floating_point_v7_1_22.floating_point_v7_1_22_viv_comp
+Compiling package xbip_utils_v3_0_16.xbip_utils_v3_0_16_pkg
+Compiling package axi_utils_v2_0_12.axi_utils_v2_0_12_pkg
+Compiling package floating_point_v7_1_22.floating_point_v7_1_22_consts
+Compiling package ieee.math_real
+Compiling package floating_point_v7_1_22.floating_point_v7_1_22_exp_table...
+Compiling package mult_gen_v12_0_25.mult_gen_v12_0_25_pkg
+Compiling package floating_point_v7_1_22.floating_point_v7_1_22_pkg
+Compiling package floating_point_v7_1_22.flt_utils
+Compiling package xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv_comp
+Compiling package unisim.vcomponents
+Compiling package ieee.vital_timing
+Compiling package ieee.vital_primitives
+Compiling package unisim.vpkg
+Compiling package xil_defaultlib.$unit_sv_module_top_sv
+Compiling package uvm.uvm_pkg
+Compiling package std.std
+Compiling package xil_defaultlib.svr_pkg
+Compiling package xil_defaultlib.file_agent_pkg
+Compiling package xil_defaultlib.axi_pkg
+Compiling package xil_defaultlib.fir_subsystem_pkg
+Compiling package xil_defaultlib.$unit_dataflow_monitor_sv
+Compiling architecture muxcy_v of entity unisim.MUXCY [muxcy_default]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=7,length=0)\]
+Compiling architecture struct of entity floating_point_v7_1_22.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_22.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture xorcy_v of entity unisim.XORCY [xorcy_default]
+Compiling architecture struct of entity floating_point_v7_1_22.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=24,length=0,fast_in...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=16,length=0)\]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=4,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=48,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=24,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_22.dsp48e1_wrapper [\dsp48e1_wrapper(c_part="xc7z020...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [delay_default]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=13,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=27,length=0)\]
+Compiling architecture synth of entity floating_point_v7_1_22.align_add_dsp48e1_sgl [\align_add_dsp48e1_sgl(c_xdevice...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="00000000000000001111...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="00000000000000000000...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=5,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_22.lead_zero_encode_shift [\lead_zero_encode_shift(ab_fw=24...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=3,length=0)\]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="11111110010101001011...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="00010001010111110000...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="11101110101000001111...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=2)\]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(adreg=0,alumodereg=0,ca...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=25,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_22.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=24,c_wi...]
+Compiling architecture rtl of entity floating_point_v7_1_22.norm_and_round_dsp48e1_sgl [\norm_and_round_dsp48e1_sgl(c_mu...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="10011001100110011001...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="11111111000000001111...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=9,length=0)\]
+Compiling architecture struct of entity floating_point_v7_1_22.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=8,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=10)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=4,length=0,fast_inp...]
+Compiling architecture fdre_v of entity unisim.FDRE [fdre_default]
+Compiling architecture fde_v of entity unisim.FDE [fde_default]
+Compiling architecture struct of entity floating_point_v7_1_22.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_22.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(fast_input=true)\]
+Compiling architecture rtl of entity floating_point_v7_1_22.special_detect [\special_detect(c_xdevicefamily=...]
+Compiling architecture struct of entity floating_point_v7_1_22.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_22.compare_gt [\compare_gt(c_xdevicefamily="zyn...]
+Compiling architecture synth of entity floating_point_v7_1_22.compare [\compare(c_xdevicefamily="zynq",...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=8)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=9)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=2,length=2,fast_inp...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(length=2,fast_input=true)...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(length=0,fast_input=true)...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=2,length=0,fast_inp...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=12,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_22.flt_add_exp_sp [\flt_add_exp_sp(c_xdevicefamily=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=23)\]
+Compiling architecture synth of entity floating_point_v7_1_22.flt_dec_op [\flt_dec_op(c_xdevicefamily="zyn...]
+Compiling architecture rtl of entity floating_point_v7_1_22.flt_add_dsp [\flt_add_dsp(c_xdevicefamily="zy...]
+Compiling architecture rtl of entity floating_point_v7_1_22.flt_add [\flt_add(c_xdevicefamily="zynq",...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=32,length=0)\]
+Compiling architecture xilinx of entity floating_point_v7_1_22.floating_point_v7_1_22_viv [\floating_point_v7_1_22_viv(c_xd...]
+Compiling architecture xilinx of entity floating_point_v7_1_22.floating_point_v7_1_22 [\floating_point_v7_1_22(c_xdevic...]
+Compiling architecture fir_fadd_32ns_32ns_32_5_full_dsp_1_ip_arch of entity xil_defaultlib.fir_fadd_32ns_32ns_32_5_full_dsp_1_ip [fir_fadd_32ns_32ns_32_5_full_dsp...]
+Compiling module xil_defaultlib.fir_fadd_32ns_32ns_32_5_full_dsp...
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=17,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_22.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=24,b_wi...]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture rtl of entity floating_point_v7_1_22.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=24,b_wi...]
+Compiling architecture struct of entity floating_point_v7_1_22.fix_mult_dsp48e1_sgl [\fix_mult_dsp48e1_sgl(registers=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.fix_mult [\fix_mult(c_xdevicefamily="zynq"...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=8,length=0,fast_inp...]
+Compiling architecture struct of entity floating_point_v7_1_22.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture struct of entity floating_point_v7_1_22.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_22.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture rtl of entity floating_point_v7_1_22.special_detect [\special_detect(c_xdevicefamily=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=2,fast_input=true)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=4,fast_input=true)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=3,length=0,fast_inp...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=14,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_22.flt_mult_exp [\flt_mult_exp(c_xdevicefamily="z...]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=30,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=18,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_22.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=30,b_wi...]
+Compiling architecture struct of entity floating_point_v7_1_22.flt_round_dsp_opt_full [\flt_round_dsp_opt_full(c_xdevic...]
+Compiling architecture rtl of entity floating_point_v7_1_22.flt_mult_round [\flt_mult_round(c_xdevicefamily=...]
+Compiling architecture synth of entity floating_point_v7_1_22.flt_dec_op_lat [\flt_dec_op_lat(c_xdevicefamily=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.flt_mult [\flt_mult(c_xdevicefamily="zynq"...]
+Compiling architecture xilinx of entity floating_point_v7_1_22.floating_point_v7_1_22_viv [\floating_point_v7_1_22_viv(c_xd...]
+Compiling architecture xilinx of entity floating_point_v7_1_22.floating_point_v7_1_22 [\floating_point_v7_1_22(c_xdevic...]
+Compiling architecture fir_fmul_32ns_32ns_32_4_max_dsp_1_ip_arch of entity xil_defaultlib.fir_fmul_32ns_32ns_32_4_max_dsp_1_ip [fir_fmul_32ns_32ns_32_4_max_dsp_...]
+Compiling module xil_defaultlib.fir_fmul_32ns_32ns_32_4_max_dsp_...
+Compiling module xil_defaultlib.fir_flow_control_loop_pipe_seque...
+Compiling module xil_defaultlib.fir_fir_Pipeline_samp_loop
+Compiling module xil_defaultlib.fir_fir_Pipeline_tap_loop
+Compiling module xil_defaultlib.fir_control_s_axi
+Compiling module xil_defaultlib.fir_regslice_both(DataWidth=32)
+Compiling module xil_defaultlib.fir_regslice_both(DataWidth=4)
+Compiling module xil_defaultlib.fir_regslice_both(DataWidth=1)
+Compiling module xil_defaultlib.fir
+Compiling module xil_defaultlib.misc_interface_default
+Compiling module xil_defaultlib.svr_if(DATA_WIDTH=41)
+Compiling module xil_defaultlib.axi_if(ADDR_WIDTH=6,STRB_WIDTH=4...
+Compiling module xil_defaultlib.sv_module_top
+Compiling module xil_defaultlib.AESL_deadlock_idx1_monitor
+Compiling module xil_defaultlib.AESL_deadlock_idx0_monitor
+Compiling module xil_defaultlib.AESL_deadlock_kernel_monitor_top...
+Compiling module xil_defaultlib.nodf_module_intf_default
+Compiling module xil_defaultlib.seq_loop_intf(FSM_WIDTH=12)
+Compiling module xil_defaultlib.upc_loop_intf(FSM_WIDTH=1)
+Compiling module xil_defaultlib.dataflow_monitor_1
+Compiling module xil_defaultlib.apatb_fir_top
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fir
+
+****** xsim v2026.1 (64-bit)
+  **** SW Build 6511674 on Tue Jun 16 11:01:26 MDT 2026
+  **** IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+  **** SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+  **** Start of session at: Tue Oct 27 22:14:27 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/fir/xsim_script.tcl
+# xsim {fir} -testplusarg UVM_VERBOSITY=UVM_NONE -testplusarg UVM_TESTNAME=fir_test_lib -testplusarg UVM_TIMEOUT=20000000000000 -autoloadwcfg -tclbatch {fir.tcl}
+Time resolution is 1 ps
+source fir.tcl
+## run all
+UVM_INFO /eda/xilinx/2026.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18601) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO /eda/xilinx/2026.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18648) @ 0: reporter [NO_DPI_TSTNAME] UVM_NO_DPI defined--getting UVM_TESTNAME directly, without DPI
+UVM_INFO /eda/xilinx/2026.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18752) @ 0: reporter [UVMTOP] UVM testbench topology:
+----------------------------------------------------------------------------------------------------------
+Name                                               Type                              Size  Value          
+----------------------------------------------------------------------------------------------------------
+uvm_test_top                                       fir_test_lib                      -     @370           
+  top_env                                          fir_env                           -     @381           
+    axi_lite_control                               uvm_env                           -     @428           
+      item_rtr_port                                uvm_analysis_port                 -     @447           
+      item_wtr_port                                uvm_analysis_port                 -     @437           
+      master                                       uvm_agent                         -     @840           
+        ardrv                                      uvm_driver #(REQ,RSP)             -     @1515          
+          item_read_imp                            uvm_analysis_port                 -     @1544          
+          rsp_port                                 uvm_analysis_port                 -     @1534          
+          seq_item_port                            uvm_seq_item_pull_port            -     @1524          
+          m_num_sent                               integral                          32    'h0            
+        arsqr                                      axi_sequencer                     -     @1554          
+          rsp_export                               uvm_analysis_export               -     @1563          
+          seq_item_export                          uvm_seq_item_pull_imp             -     @1681          
+          arbitration_queue                        array                             0     -              
+          lock_queue                               array                             0     -              
+          num_last_reqs                            integral                          32    'd1            
+          num_last_rsps                            integral                          32    'd1            
+        awdrv                                      uvm_driver #(REQ,RSP)             -     @987           
+          item_read_imp                            uvm_analysis_port                 -     @1016          
+          rsp_port                                 uvm_analysis_port                 -     @1006          
+          seq_item_port                            uvm_seq_item_pull_port            -     @996           
+          m_num_sent                               integral                          32    'h0            
+        awsqr                                      axi_sequencer                     -     @1026          
+          rsp_export                               uvm_analysis_export               -     @1035          
+          seq_item_export                          uvm_seq_item_pull_imp             -     @1153          
+          arbitration_queue                        array                             0     -              
+          lock_queue                               array                             0     -              
+          num_last_reqs                            integral                          32    'd1            
+          num_last_rsps                            integral                          32    'd1            
+        bdrv                                       uvm_driver #(REQ,RSP)             -     @1339          
+          item_read_imp                            uvm_analysis_port                 -     @1368          
+          rsp_port                                 uvm_analysis_port                 -     @1358          
+          seq_item_port                            uvm_seq_item_pull_port            -     @1348          
+          m_num_sent                               integral                          32    'h0            
+        bsqr                                       axi_sequencer                     -     @1378          
+          rsp_export                               uvm_analysis_export               -     @1387          
+          seq_item_export                          uvm_seq_item_pull_imp             -     @1505          
+          arbitration_queue                        array                             0     -              
+          lock_queue                               array                             0     -              
+          num_last_reqs                            integral                          32    'd1            
+          num_last_rsps                            integral                          32    'd1            
+        rdrv                                       uvm_driver #(REQ,RSP)             -     @1691          
+          item_read_imp                            uvm_analysis_port                 -     @1720          
+          rsp_port                                 uvm_analysis_port                 -     @1710          
+          seq_item_port                            uvm_seq_item_pull_port            -     @1700          
+          m_num_sent                               integral                          32    'h0            
+        rsqr                                       axi_sequencer                     -     @1730          
+          rsp_export                               uvm_analysis_export               -     @1739          
+          seq_item_export                          uvm_seq_item_pull_imp             -     @1857          
+          arbitration_queue                        array                             0     -              
+          lock_queue                               array                             0     -              
+          num_last_reqs                            integral                          32    'd1            
+          num_last_rsps                            integral                          32    'd1            
+        wdrv                                       uvm_driver #(REQ,RSP)             -     @1163          
+          item_read_imp                            uvm_analysis_port                 -     @1192          
+          rsp_port                                 uvm_analysis_port                 -     @1182          
+          seq_item_port                            uvm_seq_item_pull_port            -     @1172          
+          m_num_sent                               integral                          32    'h0            
+        wsqr                                       axi_sequencer                     -     @1202          
+          rsp_export                               uvm_analysis_export               -     @1211          
+          seq_item_export                          uvm_seq_item_pull_imp             -     @1329          
+          arbitration_queue                        array                             0     -              
+          lock_queue                               array                             0     -              
+          num_last_reqs                            integral                          32    'd1            
+          num_last_rsps                            integral                          32    'd1            
+      monitor                                      uvm_monitor                       -     @662           
+        item_ar2r_port                             uvm_analysis_port                 -     @731           
+        item_ar_port                               uvm_analysis_port                 -     @701           
+        item_aw2b_port                             uvm_analysis_port                 -     @721           
+        item_aw_port                               uvm_analysis_port                 -     @671           
+        item_b_port                                uvm_analysis_port                 -     @691           
+        item_r_port                                uvm_analysis_port                 -     @711           
+        item_w_port                                uvm_analysis_port                 -     @681           
+        checks_enable                              integral                          1     'h1            
+        coverage_enable                            integral                          1     'h1            
+      state                                        axi_state                         -     @741           
+        ar2r_imp                                   uvm_analysis_imp_ar2r             -     @810           
+        ar_imp                                     uvm_analysis_imp_ar               -     @780           
+        aw2b_imp                                   uvm_analysis_imp_aw2b             -     @800           
+        aw_imp                                     uvm_analysis_imp_aw               -     @750           
+        b_imp                                      uvm_analysis_imp_b                -     @770           
+        item_rtr_port                              uvm_analysis_port                 -     @830           
+        item_wtr_port                              uvm_analysis_port                 -     @820           
+        r_imp                                      uvm_analysis_imp_r                -     @790           
+        w_imp                                      uvm_analysis_imp_w                -     @760           
+        avg_rate                                   integral                          32    'h0            
+        exp_rate                                   integral                          32    'h0            
+        win_size                                   integral                          32    'h0            
+        bqnum_for_slaseq                           integral                          32    'h0            
+        rq_from_model_num                          integral                          32    'h0            
+      vsqr                                         axi_virtual_sequencer             -     @849           
+        rsp_export                                 uvm_analysis_export               -     @858           
+        seq_item_export                            uvm_seq_item_pull_imp             -     @976           
+        arbitration_queue                          array                             0     -              
+        lock_queue                                 array                             0     -              
+        num_last_reqs                              integral                          32    'd1            
+        num_last_rsps                              integral                          32    'd1            
+      cfg                                          axi_cfg                           -     @400           
+        has_checker                                integral                          1     'h1            
+        has_coverage                               integral                          1     'h1            
+        id_num                                     integral                          32    'h1            
+        reset_level                                reset_level_enum                  32    RESET_LEVEL_LOW
+        drv_type                                   drv_type_enum                     32    MASTER         
+        write_latency_mode                         latency_mode_enum                 32    CHANNEL_FIRST  
+        read_latency_mode                          latency_mode_enum                 32    CHANNEL_FIRST  
+        clatency                                   axi_latency                       -     @424           
+          wr_latency                               integral                          32    'h0            
+          rd_latency                               integral                          32    'h0            
+    env_master_svr_s_in                            uvm_env                           -     @401           
+      m_agt                                        uvm_agent                         -     @1935          
+        drv                                        uvm_driver #(REQ,RSP)             -     @2083          
+          rsp_port                                 uvm_analysis_port                 -     @2102          
+          seq_item_port                            uvm_seq_item_pull_port            -     @2092          
+        mon                                        uvm_monitor                       -     @2112          
+          item_collect_port                        uvm_analysis_port                 -     @2123          
+        sqr                                        uvm_sequencer                     -     @1946          
+          rsp_export                               uvm_analysis_export               -     @1955          
+          seq_item_export                          uvm_seq_item_pull_imp             -     @2073          
+          arbitration_queue                        array                             0     -              
+          lock_queue                               array                             0     -              
+          num_last_reqs                            integral                          32    'd1            
+          num_last_rsps                            integral                          32    'd1            
+    env_slave_svr_m_out                            uvm_env                           -     @414           
+      s_agt                                        uvm_agent                         -     @2141          
+        drv                                        uvm_driver #(REQ,RSP)             -     @2289          
+          rsp_port                                 uvm_analysis_port                 -     @2308          
+          seq_item_port                            uvm_seq_item_pull_port            -     @2298          
+        mon                                        uvm_monitor                       -     @2318          
+          item_collect_port                        uvm_analysis_port                 -     @2329          
+        sqr                                        uvm_sequencer                     -     @2152          
+          rsp_export                               uvm_analysis_export               -     @2161          
+          seq_item_export                          uvm_seq_item_pull_imp             -     @2279          
+          arbitration_queue                        array                             0     -              
+          lock_queue                               array                             0     -              
+          num_last_reqs                            integral                          32    'd1            
+          num_last_rsps                            integral                          32    'd1            
+    fir_virtual_sqr                                fir_virtual_sequencer             -     @519           
+      rsp_export                                   uvm_analysis_export               -     @528           
+      seq_item_export                              uvm_seq_item_pull_imp             -     @646           
+      arbitration_queue                            array                             0     -              
+      lock_queue                                   array                             0     -              
+      num_last_reqs                                integral                          32    'd1            
+      num_last_rsps                                integral                          32    'd1            
+    refm                                           fir_reference_model               -     @457           
+      trans_num_idx                                integral                          32    'h0            
+    subsys_mon                                     fir_subsystem_monitor             -     @470           
+      control_rtr_imp                              uvm_analysis_imp_axi_rtr_control  -     @509           
+      control_wtr_imp                              uvm_analysis_imp_axi_wtr_control  -     @499           
+      scbd                                         fir_scoreboard                    -     @2356          
+        refm                                       fir_reference_model               -     @457           
+          trans_num_idx                            integral                          32    'h0            
+        file_rd_TVOUT_transaction_size             <unknown>                         -     @2366          
+          TV_FILE                                  string                            0     ""             
+          fp                                       integral                          32    'hxxxxxxxx     
+          TV_FILE_num                              integral                          32    'h0            
+          HEX_read                                 integral                          32    'h0            
+          DEC_read                                 integral                          32    'h0            
+          is_binary                                integral                          32    'h0            
+          TV_FILE_COMPARE                          string                            0     ""             
+          fp_compare                               integral                          32    'hxxxxxxxx     
+        TVOUT_transaction_size_queue               da(integral)                      0     -              
+        file_wr_port_m_out_m_out_TDATA             <unknown>                         -     @2367          
+          TV_FILE                                  string                            0     ""             
+          fp                                       integral                          32    'hxxxxxxxx     
+          file_open                                integral                          32    'h0            
+          write_file_done                          integral                          32    'h0            
+          write_section_done                       integral                          32    'h0            
+          TRANSACTION_NUM                          integral                          32    'h0            
+          transaction_num_idx                      integral                          32    'h0            
+          TRANSACTION_DEPTH                        integral                          32    'h0            
+          TRANSACTION_DEPTH_queue                  da(integral)                      0     -              
+          TRANSACTION_DEPTH_queue_for_depth_check  da(integral)                      0     -              
+          transaction_depth_idx                    integral                          32    'h0            
+          ap_done_num_idx                          integral                          32    'h0            
+          is_binary                                integral                          32    'h0            
+        write_file_done_m_out_m_out_TDATA          integral                          32    'h0            
+        write_section_done_m_out_m_out_TDATA       integral                          32    'h0            
+        file_wr_port_m_out_m_out_TKEEP             <unknown>                         -     @2368          
+          TV_FILE                                  string                            0     ""             
+          fp                                       integral                          32    'hxxxxxxxx     
+          file_open                                integral                          32    'h0            
+          write_file_done                          integral                          32    'h0            
+          write_section_done                       integral                          32    'h0            
+          TRANSACTION_NUM                          integral                          32    'h0            
+          transaction_num_idx                      integral                          32    'h0            
+          TRANSACTION_DEPTH                        integral                          32    'h0            
+          TRANSACTION_DEPTH_queue                  da(integral)                      0     -              
+          TRANSACTION_DEPTH_queue_for_depth_check  da(integral)                      0     -              
+          transaction_depth_idx                    integral                          32    'h0            
+          ap_done_num_idx                          integral                          32    'h0            
+          is_binary                                integral                          32    'h0            
+        write_file_done_m_out_m_out_TKEEP          integral                          32    'h0            
+        write_section_done_m_out_m_out_TKEEP       integral                          32    'h0            
+        file_wr_port_m_out_m_out_TSTRB             <unknown>                         -     @2369          
+          TV_FILE                                  string                            0     ""             
+          fp                                       integral                          32    'hxxxxxxxx     
+          file_open                                integral                          32    'h0            
+          write_file_done                          integral                          32    'h0            
+          write_section_done                       integral                          32    'h0            
+          TRANSACTION_NUM                          integral                          32    'h0            
+          transaction_num_idx                      integral                          32    'h0            
+          TRANSACTION_DEPTH                        integral                          32    'h0            
+          TRANSACTION_DEPTH_queue                  da(integral)                      0     -              
+          TRANSACTION_DEPTH_queue_for_depth_check  da(integral)                      0     -              
+          transaction_depth_idx                    integral                          32    'h0            
+          ap_done_num_idx                          integral                          32    'h0            
+          is_binary                                integral                          32    'h0            
+        write_file_done_m_out_m_out_TSTRB          integral                          32    'h0            
+        write_section_done_m_out_m_out_TSTRB       integral                          32    'h0            
+        file_wr_port_m_out_m_out_TLAST             <unknown>                         -     @2370          
+          TV_FILE                                  string                            0     ""             
+          fp                                       integral                          32    'hxxxxxxxx     
+          file_open                                integral                          32    'h0            
+          write_file_done                          integral                          32    'h0            
+          write_section_done                       integral                          32    'h0            
+          TRANSACTION_NUM                          integral                          32    'h0            
+          transaction_num_idx                      integral                          32    'h0            
+          TRANSACTION_DEPTH                        integral                          32    'h0            
+          TRANSACTION_DEPTH_queue                  da(integral)                      0     -              
+          TRANSACTION_DEPTH_queue_for_depth_check  da(integral)                      0     -              
+          transaction_depth_idx                    integral                          32    'h0            
+          ap_done_num_idx                          integral                          32    'h0            
+          is_binary                                integral                          32    'h0            
+        write_file_done_m_out_m_out_TLAST          integral                          32    'h0            
+        write_section_done_m_out_m_out_TLAST       integral                          32    'h0            
+      svr_master_s_in_imp                          uvm_analysis_imp_svr_master_s_in  -     @479           
+      svr_slave_m_out_imp                          uvm_analysis_imp_svr_slave_m_out  -     @489           
+    env_master_svr_s_in                            uvm_env                           -     @401           
+    env_slave_svr_m_out                            uvm_env                           -     @414           
+    refm                                           fir_reference_model               -     @457           
+    fir_virtual_sqr                                fir_virtual_sequencer             -     @519           
+    fir_cfg                                        fir_config                        -     @395           
+      port_s_in_cfg                                svr_config                        -     @396           
+        svr_type                                   svr_inst_type                     32    SVR_MASTER     
+        prt_type                                   svr_protocol_type                 32    AXIS           
+        is_active                                  svr_active_passive_enum           1     SVR_ACTIVE     
+        reset_level                                svr_reset_level_enum              1     RESET_LEVEL_LOW
+        spec_cfg                                   svr_spec_cfg_enum                 32    NORMAL         
+        clatency                                   svr_latency                       -     @397           
+          transfer_latency                         integral                          32    'h0            
+      port_m_out_cfg                               svr_config                        -     @398           
+        svr_type                                   svr_inst_type                     32    SVR_SLAVE      
+        prt_type                                   svr_protocol_type                 32    AXIS           
+        is_active                                  svr_active_passive_enum           1     SVR_ACTIVE     
+        reset_level                                svr_reset_level_enum              1     RESET_LEVEL_LOW
+        spec_cfg                                   svr_spec_cfg_enum                 32    NORMAL         
+        clatency                                   svr_latency                       -     @399           
+          transfer_latency                         integral                          32    'h0            
+      control_cfg                                  axi_cfg                           -     @400           
+        has_checker                                integral                          1     'h1            
+        has_coverage                               integral                          1     'h1            
+        id_num                                     integral                          32    'h1            
+        reset_level                                reset_level_enum                  32    RESET_LEVEL_LOW
+        drv_type                                   drv_type_enum                     32    MASTER         
+        write_latency_mode                         latency_mode_enum                 32    CHANNEL_FIRST  
+        read_latency_mode                          latency_mode_enum                 32    CHANNEL_FIRST  
+        clatency                                   axi_latency                       -     @424           
+          wr_latency                               integral                          32    'h0            
+          rd_latency                               integral                          32    'h0            
+      check_ena                                    integral                          32    'h0            
+      cover_ena                                    integral                          32    'h0            
+----------------------------------------------------------------------------------------------------------
+
+UVM_INFO /eda/xilinx/2026.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 43 [n/a] @ "125000"
+// RTL Simulation : 1 / 43 [n/a] @ "3415000"
+// RTL Simulation : 2 / 43 [n/a] @ "4755000"
+// RTL Simulation : 3 / 43 [n/a] @ "6265000"
+// RTL Simulation : 4 / 43 [n/a] @ "8075000"
+// RTL Simulation : 5 / 43 [n/a] @ "11405000"
+// RTL Simulation : 6 / 43 [n/a] @ "13115000"
+// RTL Simulation : 7 / 43 [n/a] @ "16605000"
+// RTL Simulation : 8 / 43 [n/a] @ "20155000"
+// RTL Simulation : 9 / 43 [n/a] @ "21585000"
+// RTL Simulation : 10 / 43 [n/a] @ "22925000"
+// RTL Simulation : 11 / 43 [n/a] @ "24265000"
+// RTL Simulation : 12 / 43 [n/a] @ "25625000"
+// RTL Simulation : 13 / 43 [n/a] @ "26105000"
+// RTL Simulation : 14 / 43 [n/a] @ "27425000"
+// RTL Simulation : 15 / 43 [n/a] @ "31295000"
+// RTL Simulation : 16 / 43 [n/a] @ "37725000"
+// RTL Simulation : 17 / 43 [n/a] @ "39065000"
+// RTL Simulation : 18 / 43 [n/a] @ "40405000"
+// RTL Simulation : 19 / 43 [n/a] @ "41795000"
+// RTL Simulation : 20 / 43 [n/a] @ "41985000"
+// RTL Simulation : 21 / 43 [n/a] @ "42175000"
+// RTL Simulation : 22 / 43 [n/a] @ "43565000"
+// RTL Simulation : 23 / 43 [n/a] @ "43755000"
+// RTL Simulation : 24 / 43 [n/a] @ "43945000"
+// RTL Simulation : 25 / 43 [n/a] @ "45335000"
+// RTL Simulation : 26 / 43 [n/a] @ "45525000"
+// RTL Simulation : 27 / 43 [n/a] @ "45715000"
+// RTL Simulation : 28 / 43 [n/a] @ "47105000"
+// RTL Simulation : 29 / 43 [n/a] @ "47295000"
+// RTL Simulation : 30 / 43 [n/a] @ "47485000"
+// RTL Simulation : 31 / 43 [n/a] @ "48875000"
+// RTL Simulation : 32 / 43 [n/a] @ "49135000"
+// RTL Simulation : 33 / 43 [n/a] @ "49395000"
+// RTL Simulation : 34 / 43 [n/a] @ "50785000"
+// RTL Simulation : 35 / 43 [n/a] @ "51185000"
+// RTL Simulation : 36 / 43 [n/a] @ "51585000"
+// RTL Simulation : 37 / 43 [n/a] @ "52975000"
+// RTL Simulation : 38 / 43 [n/a] @ "55225000"
+// RTL Simulation : 39 / 43 [n/a] @ "57475000"
+// RTL Simulation : 40 / 43 [n/a] @ "58865000"
+// RTL Simulation : 41 / 43 [n/a] @ "60205000"
+// RTL Simulation : 42 / 43 [n/a] @ "61545000"
+// RTL Simulation : 43 / 43 [n/a] @ "62935000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 63105 ns : File "/eda/xilinx/2026.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:18 . Memory (MB): peak = 1633.703 ; gain = 0.000 ; free physical = 123018 ; free virtual = 838375
+## quit
+INFO: xsimkernel Simulation Memory Usage: 232180 KB (Peak: 273488 KB), Simulation CPU Usage: 19790 ms
+INFO: [Common 17-206] Exiting xsim at Tue Oct 27 22:14:51 2026...
+INFO: [COSIM 212-316] Starting C post checking ...
+scenario hand_a                   halted=0 error=0 tx_id=0 out_words=13 unread_words=0
+scenario hand_order               halted=0 error=0 tx_id=0 out_words=5 unread_words=0
+scenario ntaps1                   halted=0 error=0 tx_id=0 out_words=22 unread_words=0
+scenario ntaps16                  halted=0 error=0 tx_id=0 out_words=52 unread_words=0
+scenario short_cross              halted=0 error=0 tx_id=0 out_words=32 unread_words=0
+scenario split_one                halted=0 error=0 tx_id=0 out_words=42 unread_words=0
+scenario split_many               halted=0 error=0 tx_id=0 out_words=45 unread_words=0
+scenario reconfig                 halted=0 error=0 tx_id=0 out_words=30 unread_words=0
+scenario zero_len                 halted=0 error=0 tx_id=0 out_words=8 unread_words=0
+scenario signed_zero              halted=0 error=0 tx_id=0 out_words=5 unread_words=0
+scenario nonfinite_taps           halted=0 error=0 tx_id=0 out_words=5 unread_words=0
+scenario nan_sample               halted=0 error=0 tx_id=0 out_words=7 unread_words=0
+scenario timing_p0                halted=0 error=0 tx_id=0 out_words=2 unread_words=0
+scenario timing_p1                halted=0 error=0 tx_id=0 out_words=3 unread_words=0
+scenario timing_p256              halted=0 error=0 tx_id=0 out_words=258 unread_words=0
+scenario timing_p512              halted=0 error=0 tx_id=0 out_words=514 unread_words=0
+scenario err_unknown              halted=1 error=1 tx_id=52 out_words=5 unread_words=0
+scenario err_unknown_queued       halted=1 error=1 tx_id=52 out_words=5 unread_words=11
+scenario err_unknown_fresh        halted=0 error=0 tx_id=0 out_words=10 unread_words=0
+scenario err_bad_ntaps0           halted=1 error=2 tx_id=53 out_words=0 unread_words=0
+scenario err_bad_ntaps0_queued    halted=1 error=2 tx_id=53 out_words=0 unread_words=11
+scenario err_bad_ntaps0_fresh     halted=0 error=0 tx_id=0 out_words=10 unread_words=0
+scenario err_bad_ntaps17          halted=1 error=2 tx_id=54 out_words=0 unread_words=17
+scenario err_bad_ntaps17_queued   halted=1 error=2 tx_id=54 out_words=0 unread_words=28
+scenario err_bad_ntaps17_fresh    halted=0 error=0 tx_id=0 out_words=10 unread_words=0
+scenario err_no_config            halted=1 error=3 tx_id=55 out_words=0 unread_words=4
+scenario err_no_config_queued     halted=1 error=3 tx_id=55 out_words=0 unread_words=15
+scenario err_no_config_fresh      halted=0 error=0 tx_id=0 out_words=10 unread_words=0
+scenario err_no_config_zero       halted=1 error=3 tx_id=56 out_words=0 unread_words=0
+scenario err_no_config_zero_queued halted=1 error=3 tx_id=56 out_words=0 unread_words=11
+scenario err_no_config_zero_fresh halted=0 error=0 tx_id=0 out_words=10 unread_words=0
+scenario err_taps_early           halted=1 error=4 tx_id=57 out_words=0 unread_words=0
+scenario err_taps_early_queued    halted=1 error=4 tx_id=57 out_words=0 unread_words=11
+scenario err_taps_early_fresh     halted=0 error=0 tx_id=0 out_words=10 unread_words=0
+scenario err_taps_notlast         halted=1 error=5 tx_id=58 out_words=0 unread_words=0
+scenario err_taps_notlast_queued  halted=1 error=5 tx_id=58 out_words=0 unread_words=11
+scenario err_taps_notlast_fresh   halted=0 error=0 tx_id=0 out_words=10 unread_words=0
+scenario err_samp_early           halted=1 error=6 tx_id=61 out_words=14 unread_words=0
+scenario err_samp_early_queued    halted=1 error=6 tx_id=61 out_words=14 unread_words=11
+scenario err_samp_early_fresh     halted=0 error=0 tx_id=0 out_words=10 unread_words=0
+scenario err_samp_notlast         halted=1 error=7 tx_id=63 out_words=8 unread_words=0
+scenario err_samp_notlast_queued  halted=1 error=7 tx_id=63 out_words=8 unread_words=11
+scenario err_samp_notlast_fresh   halted=0 error=0 tx_id=0 out_words=10 unread_words=0
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 534
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [HLS 200-2161] Finished Command cosim_design Elapsed time: 00:01:32; Allocated memory: 10.934 MB.
+COSIM_DONE
+INFO: [HLS 200-112] Total CPU user time: 231.9 seconds. Total CPU system time: 13.91 seconds. Total elapsed time: 122.4 seconds; peak allocated memory: 379.727 MB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 2m 4s
+INFO: [vitis-run 60-1662] Stopping dispatch session having empty uuid.
