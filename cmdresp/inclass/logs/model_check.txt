@@ -1,0 +1,22 @@
+scenario                 model  status
+hand                     PASS   {"halted": 0, "error": 0, "tx_id": 0} 
+multi_len                PASS   {"halted": 0, "error": 0, "tx_id": 0} 
+reconfig                 PASS   {"halted": 0, "error": 0, "tx_id": 0} 
+count_accum              PASS   {"halted": 0, "error": 0, "tx_id": 0} 
+lo_eq_hi                 PASS   {"halted": 0, "error": 0, "tx_id": 0} 
+zero_only                PASS   {"halted": 0, "error": 0, "tx_id": 0} 
+err_no_config            PASS   {"halted": 1, "error": 1, "tx_id": 50} 
+err_no_config_fresh      PASS   {"halted": 0, "error": 0, "tx_id": 0} 
+err_count_no_config      PASS   {"halted": 1, "error": 1, "tx_id": 55} 
+err_count_no_config_fresh PASS   {"halted": 0, "error": 0, "tx_id": 0} 
+err_bad_bounds           PASS   {"halted": 1, "error": 2, "tx_id": 62} 
+err_bad_bounds_fresh     PASS   {"halted": 0, "error": 0, "tx_id": 0} 
+err_nan_bounds           PASS   {"halted": 1, "error": 2, "tx_id": 65} 
+err_nan_bounds_fresh     PASS   {"halted": 0, "error": 0, "tx_id": 0} 
+err_unknown              PASS   {"halted": 1, "error": 3, "tx_id": 71} 
+err_unknown_fresh        PASS   {"halted": 0, "error": 0, "tx_id": 0} 
+err_early_tlast          PASS   {"halted": 1, "error": 4, "tx_id": 77} 
+err_early_tlast_fresh    PASS   {"halted": 0, "error": 0, "tx_id": 0} 
+err_no_tlast             PASS   {"halted": 1, "error": 5, "tx_id": 81} 
+err_no_tlast_fresh       PASS   {"halted": 0, "error": 0, "tx_id": 0} 
+model: 0 failing scenario(s)
