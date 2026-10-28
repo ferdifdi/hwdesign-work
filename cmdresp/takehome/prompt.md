@@ -23,7 +23,9 @@ PROCESS command after it:
   any other.
 - **Reconfiguration.**  A second CONFIG in the same activation replaces the
   taps and clears the history to +0.0.
-- Taps are not checked: inf or NaN taps propagate under IEEE rules.
+- Taps are not checked: inf or NaN taps propagate under IEEE rules.  IEEE
+  does not fix a NaN's sign or payload, so every NaN result is written as the
+  canonical quiet NaN 0x7FC00000, in the model and the kernel alike.
 - Nothing persists between activations: no taps, no history, no status.
 
 ## Requirements
@@ -49,7 +51,8 @@ PROCESS command after it:
 - **END**: header only.  No response; the kernel returns.
 
 Every header is a fixed number of words and its own burst.  The kernel does
-not check TLAST on a header.
+not check TLAST on a header.  ntaps and nsamp are 16-bit fields.  If they
+share a word with unused bits, those bits are ignored, not an error.
 
 ## Errors
 Errors go in AXI-Lite status registers (halted, error code, tx_id).  On an
@@ -92,8 +95,8 @@ burst error is found while reading, after the header check has passed.
   identical outputs; a second CONFIG mid-activation with a different ntaps;
   nsamp = 0; a 256-sample PROCESS with 16 taps, for the throughput; and one
   activation per error, each followed by a fresh activation that must pass.
-  In C simulation each error activation also has commands queued behind the
-  failing one, which must stay unread.
+  Each error activation, in C simulation and co-simulation alike, also has
+  commands queued behind the failing one, which must stay unread.
 
 Compare the model, C simulation and co-simulation bit for bit.  Run
 co-simulation once: one testbench run that walks through every scenario in
@@ -130,3 +133,6 @@ this folder to be committed: a reviewer opens them to check results.md.
 | Version | Change | Why |
 | --- | --- | --- |
 | 1 | First version | |
+| 2 | Every NaN result is the canonical quiet NaN 0x7FC00000 | Run 1: `nonfinite_taps` failed cosim. The RTL wrote 0x7FC00000 and x86 0xFFC00000 for inf × 0 (Open Item 1, Assumption 8) |
+| 2 | Unused bits beside ntaps/nsamp are ignored, not an error | Run 1 had to choose (Assumption 1); I kept its choice |
+| 2 | Error activations with commands queued behind them run in cosim too | Run 1 ran them in csim only, believing cosim could not leave input unread; its own cosim showed it can (Assumption 7) |
