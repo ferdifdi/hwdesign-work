@@ -1,0 +1,7 @@
+L(timing_p0  ) = 34 cycles
+L(timing_p1  ) = 118 cycles
+L(timing_p256) = 373 cycles
+L(timing_p512) = 629 cycles
+span(256 samples) = 339 cycles; target <= 256 + depth 80 + 10 = 346: PASS
+steady-state rate = 1.000 cycles/sample (II)
+latency, first sample in to first result out = 84 cycles (no target)
