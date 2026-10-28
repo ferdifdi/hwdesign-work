@@ -1,0 +1,46 @@
+scenario                   cosim  status
+hand_a                     PASS   {"halted": 0, "error": 0, "tx_id": 0} 
+hand_order                 PASS   {"halted": 0, "error": 0, "tx_id": 0} 
+ntaps1                     PASS   {"halted": 0, "error": 0, "tx_id": 0} 
+ntaps16                    PASS   {"halted": 0, "error": 0, "tx_id": 0} 
+short_cross                PASS   {"halted": 0, "error": 0, "tx_id": 0} 
+split_one                  PASS   {"halted": 0, "error": 0, "tx_id": 0} 
+split_many                 PASS   {"halted": 0, "error": 0, "tx_id": 0} 
+reconfig                   PASS   {"halted": 0, "error": 0, "tx_id": 0} 
+zero_len                   PASS   {"halted": 0, "error": 0, "tx_id": 0} 
+signed_zero                PASS   {"halted": 0, "error": 0, "tx_id": 0} 
+nonfinite_taps             PASS   {"halted": 0, "error": 0, "tx_id": 0} 
+nan_sample                 PASS   {"halted": 0, "error": 0, "tx_id": 0} 
+timing_p0                  PASS   {"halted": 0, "error": 0, "tx_id": 0} 
+timing_p1                  PASS   {"halted": 0, "error": 0, "tx_id": 0} 
+timing_p256                PASS   {"halted": 0, "error": 0, "tx_id": 0} 
+timing_p512                PASS   {"halted": 0, "error": 0, "tx_id": 0} 
+err_unknown                PASS   {"halted": 1, "error": 1, "tx_id": 52} 
+err_unknown_queued         PASS   {"halted": 1, "error": 1, "tx_id": 52} 
+err_unknown_fresh          PASS   {"halted": 0, "error": 0, "tx_id": 0} 
+err_bad_ntaps0             PASS   {"halted": 1, "error": 2, "tx_id": 53} 
+err_bad_ntaps0_queued      PASS   {"halted": 1, "error": 2, "tx_id": 53} 
+err_bad_ntaps0_fresh       PASS   {"halted": 0, "error": 0, "tx_id": 0} 
+err_bad_ntaps17            PASS   {"halted": 1, "error": 2, "tx_id": 54} 
+err_bad_ntaps17_queued     PASS   {"halted": 1, "error": 2, "tx_id": 54} 
+err_bad_ntaps17_fresh      PASS   {"halted": 0, "error": 0, "tx_id": 0} 
+err_no_config              PASS   {"halted": 1, "error": 3, "tx_id": 55} 
+err_no_config_queued       PASS   {"halted": 1, "error": 3, "tx_id": 55} 
+err_no_config_fresh        PASS   {"halted": 0, "error": 0, "tx_id": 0} 
+err_no_config_zero         PASS   {"halted": 1, "error": 3, "tx_id": 56} 
+err_no_config_zero_queued  PASS   {"halted": 1, "error": 3, "tx_id": 56} 
+err_no_config_zero_fresh   PASS   {"halted": 0, "error": 0, "tx_id": 0} 
+err_taps_early             PASS   {"halted": 1, "error": 4, "tx_id": 57} 
+err_taps_early_queued      PASS   {"halted": 1, "error": 4, "tx_id": 57} 
+err_taps_early_fresh       PASS   {"halted": 0, "error": 0, "tx_id": 0} 
+err_taps_notlast           PASS   {"halted": 1, "error": 5, "tx_id": 58} 
+err_taps_notlast_queued    PASS   {"halted": 1, "error": 5, "tx_id": 58} 
+err_taps_notlast_fresh     PASS   {"halted": 0, "error": 0, "tx_id": 0} 
+err_samp_early             PASS   {"halted": 1, "error": 6, "tx_id": 61} 
+err_samp_early_queued      PASS   {"halted": 1, "error": 6, "tx_id": 61} 
+err_samp_early_fresh       PASS   {"halted": 0, "error": 0, "tx_id": 0} 
+err_samp_notlast           PASS   {"halted": 1, "error": 7, "tx_id": 63} 
+err_samp_notlast_queued    PASS   {"halted": 1, "error": 7, "tx_id": 63} 
+err_samp_notlast_fresh     PASS   {"halted": 0, "error": 0, "tx_id": 0} 
+split_one == split_many    PASS   (40 results, compared word for word)
+cosim: 0 failing check(s)
