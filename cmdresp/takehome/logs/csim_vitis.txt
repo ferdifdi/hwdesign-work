@@ -1,0 +1,83 @@
+
+****** vitis-run v2026.1 (64-bit)
+  **** SW Build 6497934 on 2026-06-16-10:22:25
+  **** Start of session at: Tue Oct 27 22:12:23 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+  **** HLS Build v2026.1 6493734
+Sourcing Tcl script '/home/ff2364/hwdesign-work/cmdresp/takehome/run_csim.tcl'
+INFO: [HLS 200-1510] Running: open_project -reset prj_fir 
+WARNING: [HLS 200-2182] The 'prj_fir' project will not automatically appear within Vitis IDE workspaces and is meant only for TCL batch use.  Please use open_component instead of open_project/open_solution to generate Vitis IDE compatible component files and directory structure.
+Resolution: For help on HLS 200-2182 see docs.amd.com/access/sources/dita/topic?Doc_Version=2026.1%20English&url=ug1448-hls-guidance&resourceid=200-2182.html
+INFO: [HLS 200-10] Opening and resetting solution '/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir'.
+INFO: [HLS 200-1510] Running: set_top fir 
+INFO: [HLS 200-1510] Running: add_files /home/ff2364/hwdesign-work/cmdresp/takehome/kernel.cpp 
+INFO: [HLS 200-10] Adding design file '/home/ff2364/hwdesign-work/cmdresp/takehome/kernel.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb /home/ff2364/hwdesign-work/cmdresp/takehome/tb.cpp 
+INFO: [HLS 200-10] Adding test bench file '/home/ff2364/hwdesign-work/cmdresp/takehome/tb.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution -reset solution1 
+INFO: [HLS 200-10] Creating and opening solution '/home/ff2364/hwdesign-work/cmdresp/takehome/prj_fir/solution1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [HLS 200-1510] Running: set_part xc7z020clg484-1 
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1510] Running: create_clock -period 10 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: csim_design -argv /home/ff2364/hwdesign-work/cmdresp/takehome/data csim 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [HLS 200-2191] C-Simulation will use clang-16 as the compiler
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+   Compiling ../../../../tb.cpp in debug mode
+   Compiling ../../../../kernel.cpp in debug mode
+   Generating csim.exe
+scenario hand_a                   halted=0 error=0 tx_id=0 out_words=13 unread_words=0
+scenario hand_order               halted=0 error=0 tx_id=0 out_words=5 unread_words=0
+scenario ntaps1                   halted=0 error=0 tx_id=0 out_words=22 unread_words=0
+scenario ntaps16                  halted=0 error=0 tx_id=0 out_words=52 unread_words=0
+scenario short_cross              halted=0 error=0 tx_id=0 out_words=32 unread_words=0
+scenario split_one                halted=0 error=0 tx_id=0 out_words=42 unread_words=0
+scenario split_many               halted=0 error=0 tx_id=0 out_words=45 unread_words=0
+scenario reconfig                 halted=0 error=0 tx_id=0 out_words=30 unread_words=0
+scenario zero_len                 halted=0 error=0 tx_id=0 out_words=8 unread_words=0
+scenario signed_zero              halted=0 error=0 tx_id=0 out_words=5 unread_words=0
+scenario nonfinite_taps           halted=0 error=0 tx_id=0 out_words=5 unread_words=0
+scenario nan_sample               halted=0 error=0 tx_id=0 out_words=7 unread_words=0
+scenario timing_p0                halted=0 error=0 tx_id=0 out_words=2 unread_words=0
+scenario timing_p1                halted=0 error=0 tx_id=0 out_words=3 unread_words=0
+scenario timing_p256              halted=0 error=0 tx_id=0 out_words=258 unread_words=0
+scenario timing_p512              halted=0 error=0 tx_id=0 out_words=514 unread_words=0
+scenario err_unknown              halted=1 error=1 tx_id=52 out_words=5 unread_words=0
+scenario err_unknown_queued       halted=1 error=1 tx_id=52 out_words=5 unread_words=11
+scenario err_unknown_fresh        halted=0 error=0 tx_id=0 out_words=10 unread_words=0
+scenario err_bad_ntaps0           halted=1 error=2 tx_id=53 out_words=0 unread_words=0
+scenario err_bad_ntaps0_queued    halted=1 error=2 tx_id=53 out_words=0 unread_words=11
+scenario err_bad_ntaps0_fresh     halted=0 error=0 tx_id=0 out_words=10 unread_words=0
+scenario err_bad_ntaps17          halted=1 error=2 tx_id=54 out_words=0 unread_words=17
+scenario err_bad_ntaps17_queued   halted=1 error=2 tx_id=54 out_words=0 unread_words=28
+scenario err_bad_ntaps17_fresh    halted=0 error=0 tx_id=0 out_words=10 unread_words=0
+scenario err_no_config            halted=1 error=3 tx_id=55 out_words=0 unread_words=4
+scenario err_no_config_queued     halted=1 error=3 tx_id=55 out_words=0 unread_words=15
+scenario err_no_config_fresh      halted=0 error=0 tx_id=0 out_words=10 unread_words=0
+scenario err_no_config_zero       halted=1 error=3 tx_id=56 out_words=0 unread_words=0
+scenario err_no_config_zero_queued halted=1 error=3 tx_id=56 out_words=0 unread_words=11
+scenario err_no_config_zero_fresh halted=0 error=0 tx_id=0 out_words=10 unread_words=0
+scenario err_taps_early           halted=1 error=4 tx_id=57 out_words=0 unread_words=0
+scenario err_taps_early_queued    halted=1 error=4 tx_id=57 out_words=0 unread_words=11
+scenario err_taps_early_fresh     halted=0 error=0 tx_id=0 out_words=10 unread_words=0
+scenario err_taps_notlast         halted=1 error=5 tx_id=58 out_words=0 unread_words=0
+scenario err_taps_notlast_queued  halted=1 error=5 tx_id=58 out_words=0 unread_words=11
+scenario err_taps_notlast_fresh   halted=0 error=0 tx_id=0 out_words=10 unread_words=0
+scenario err_samp_early           halted=1 error=6 tx_id=61 out_words=14 unread_words=0
+scenario err_samp_early_queued    halted=1 error=6 tx_id=61 out_words=14 unread_words=11
+scenario err_samp_early_fresh     halted=0 error=0 tx_id=0 out_words=10 unread_words=0
+scenario err_samp_notlast         halted=1 error=7 tx_id=63 out_words=8 unread_words=0
+scenario err_samp_notlast_queued  halted=1 error=7 tx_id=63 out_words=8 unread_words=11
+scenario err_samp_notlast_fresh   halted=0 error=0 tx_id=0 out_words=10 unread_words=0
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 534
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:06; Allocated memory: 0.000 MB.
+CSIM_DONE
+INFO: [HLS 200-112] Total CPU user time: 7.38 seconds. Total CPU system time: 1.42 seconds. Total elapsed time: 9.78 seconds; peak allocated memory: 286.473 MB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 12s
+INFO: [vitis-run 60-1662] Stopping dispatch session having empty uuid.
