@@ -1,0 +1,60 @@
+
+****** vitis-run v2026.1 (64-bit)
+  **** SW Build 6497934 on 2026-06-16-10:22:25
+  **** Start of session at: Tue Oct 27 22:00:56 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+  **** HLS Build v2026.1 6493734
+Sourcing Tcl script '/home/ff2364/hwdesign-work/cmdresp/inclass/run.tcl'
+INFO: [HLS 200-1510] Running: open_project -reset prj_clampcount 
+WARNING: [HLS 200-2182] The 'prj_clampcount' project will not automatically appear within Vitis IDE workspaces and is meant only for TCL batch use.  Please use open_component instead of open_project/open_solution to generate Vitis IDE compatible component files and directory structure.
+Resolution: For help on HLS 200-2182 see docs.amd.com/access/sources/dita/topic?Doc_Version=2026.1%20English&url=ug1448-hls-guidance&resourceid=200-2182.html
+INFO: [HLS 200-10] Creating and opening solution '/home/ff2364/hwdesign-work/cmdresp/inclass/prj_clampcount'.
+INFO: [HLS 200-1510] Running: set_top clampcount 
+INFO: [HLS 200-1510] Running: add_files /home/ff2364/hwdesign-work/cmdresp/inclass/kernel.cpp 
+INFO: [HLS 200-10] Adding design file '/home/ff2364/hwdesign-work/cmdresp/inclass/kernel.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb /home/ff2364/hwdesign-work/cmdresp/inclass/tb.cpp 
+INFO: [HLS 200-10] Adding test bench file '/home/ff2364/hwdesign-work/cmdresp/inclass/tb.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution -reset solution1 
+INFO: [HLS 200-10] Creating and opening solution '/home/ff2364/hwdesign-work/cmdresp/inclass/prj_clampcount/solution1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [HLS 200-1510] Running: set_part xc7z020clg484-1 
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1510] Running: create_clock -period 10 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: csim_design -argv /home/ff2364/hwdesign-work/cmdresp/inclass/data csim 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [HLS 200-2191] C-Simulation will use clang-16 as the compiler
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+   Compiling ../../../../tb.cpp in debug mode
+   Compiling ../../../../kernel.cpp in debug mode
+   Generating csim.exe
+scenario hand                     halted=0 error=0 tx_id=0 out_words=19 unread_words=0
+scenario multi_len                halted=0 error=0 tx_id=0 out_words=115 unread_words=0
+scenario reconfig                 halted=0 error=0 tx_id=0 out_words=42 unread_words=0
+scenario count_accum              halted=0 error=0 tx_id=0 out_words=40 unread_words=0
+scenario lo_eq_hi                 halted=0 error=0 tx_id=0 out_words=16 unread_words=0
+scenario zero_only                halted=0 error=0 tx_id=0 out_words=4 unread_words=0
+scenario err_no_config            halted=1 error=1 tx_id=50 out_words=0 unread_words=20
+scenario err_no_config_fresh      halted=0 error=0 tx_id=0 out_words=12 unread_words=0
+scenario err_count_no_config      halted=1 error=1 tx_id=55 out_words=0 unread_words=8
+scenario err_count_no_config_fresh halted=0 error=0 tx_id=0 out_words=12 unread_words=0
+scenario err_bad_bounds           halted=1 error=2 tx_id=62 out_words=5 unread_words=11
+scenario err_bad_bounds_fresh     halted=0 error=0 tx_id=0 out_words=12 unread_words=0
+scenario err_nan_bounds           halted=1 error=2 tx_id=65 out_words=0 unread_words=11
+scenario err_nan_bounds_fresh     halted=0 error=0 tx_id=0 out_words=12 unread_words=0
+scenario err_unknown              halted=1 error=3 tx_id=71 out_words=1 unread_words=11
+scenario err_unknown_fresh        halted=0 error=0 tx_id=0 out_words=12 unread_words=0
+scenario err_early_tlast          halted=1 error=4 tx_id=77 out_words=14 unread_words=12
+scenario err_early_tlast_fresh    halted=0 error=0 tx_id=0 out_words=12 unread_words=0
+scenario err_no_tlast             halted=1 error=5 tx_id=81 out_words=8 unread_words=12
+scenario err_no_tlast_fresh       halted=0 error=0 tx_id=0 out_words=12 unread_words=0
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 136
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:06; Allocated memory: 0.000 MB.
+CSIM_DONE
+INFO: [HLS 200-112] Total CPU user time: 6.95 seconds. Total CPU system time: 1.22 seconds. Total elapsed time: 9.16 seconds; peak allocated memory: 286.434 MB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 11s
+INFO: [vitis-run 60-1662] Stopping dispatch session having empty uuid.
